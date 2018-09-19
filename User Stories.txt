@@ -1,0 +1,10 @@
+				User Stories
+
+This is a small scale social media app which is simple and really easy to use. 
+
+•Each user would be given a personal login id and password 
+•The id and password would be used to authenticate the user.
+•The user after authentication would be redirected to their profile page.
+•The user would be able to upload picture and share their day to day experiences to other friends. 
+•Their friends would be able to comment on their pictures.
+•The user will be able to message with other clients who have a profile in the server.
