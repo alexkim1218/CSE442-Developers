@@ -1,32 +1,23 @@
 <template>
   <div class="hello">
-  Welcome to Developers
 
-<html lang = "en">
-  <head>
-    <title>Login</title>
-    <meta charset = "UTF-8" />
-  </head>
-  <body>
+  Welcome to Developers
     <h1>Hi!</h1>
     <form>
-      <fieldset>
-        <legend>User Login</legend>
         <p>
           <label>User ID</label>
           <input type = "text"
-                 id = "myText" />
+                  v-model="username"
+                 id = "username" />
         </p>
         <p>
           <label>Password</label>
-          <input>
+          <input type = "password"
+                  v-model="password"
+                 id = "password" />
         </p>
-        <button onclick="location.href='http://www.cse442developers.com'" type="button">
-     login</button>
-      </fieldset>
+        <button @click=authenticate>Login</button>
     </form>
-  </body>
-</html>
 
   </div>
 </template>
@@ -36,7 +27,16 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    authenticate () {
+      if (this.username === 'user' && this.password === 'pwd') {
+        this.$router.push({ path: '/home' })
+      } else { alert('Wrong Password') }
     }
   }
 }
