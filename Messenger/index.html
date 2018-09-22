@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developers - Chat Window</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/vue"></script>
+
+<style>
+  body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+</style>
+
+</head>
+
+<body>
+  <div id="vue-app">
+  <script src="app.js"></script>
+
+  <h2>Chat Window</h2>
+
+  <div class="user">
+    <img src="/Avatars/avatar1.png" alt="Avatar" style="width:100%;">
+    <p>Hey man. How are you?</p>
+    <span class="text-left">Alex (You)</span>
+    <span class="text-right">10:15AM</span>
+  </div>
+
+  <div class="user receiver">
+    <img src="/Avatars/avatar2.png" alt="Avatar" class="receiver" style="width:100%;">
+    <p>Sorry for late reply. I'm doing great. How about you?</p>
+    <span class="text-left-receiver">12:01PM</span>
+    <span class="text-right-receiver">Noomar</span>
+  </div>
+
+  <div class="user">
+    <img src="/Avatars/avatar1.png" alt="Avatar" style="width:100%;">
+    <p>Great! I just started my internship today.</p>
+    <span class="text-left">Alex (You)</span>
+    <span class="text-right">12:05PM</span>
+  </div>
+
+  <div class="user receiver">
+    <img src="/Avatars/avatar2.png" alt="Avatar" class="receiver" style="width:100%;">
+    <p>Congratulations! What kind of internship are you doing?</p>
+    <span class="text-left-receiver">12:32PM</span>
+    <span class="text-right-receiver">Noomar</span>
+  </div>
+
+  <div class="user">
+    <img src="/Avatars/avatar1.png" alt="Avatar" style="width:100%;">
+    <p>Thanks. It's just an engineering internship.</p>
+    <span class="text-left">Alex (You)</span>
+    <span class="text-right">12:35PM</span>
+  </div>
+
+  <div class="chat" id="form">
+    <form action="/action_page.php" class="form-box">
+      <h3>Message</h3>
+      <textarea placeholder="Type message" name="msg" required></textarea>
+      <button type="submit" class="button">Send Message</button>
+      <button type="button" class="button">Attach File</button>
+      <button type="button" class="end" onclick="endChat()">End Conversation</button>
+    </form>
+  </div>
+</body>
+
+</html>
