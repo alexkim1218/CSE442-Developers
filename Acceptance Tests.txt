@@ -1,24 +1,43 @@
 Acceptance Tests
+
 User Login:
-ï	Enter login id in the first text box.
-ï	Enter password in the second text box.
-ï	Click on login button.
+‚Ä¢	Enter login id in the first text box.
+‚Ä¢	Enter password in the second text box.
+‚Ä¢	Click on login button.
+‚Ä¢	If the user password is wrong there will be a pop up window saying wrong password.
+‚Ä¢	If password is correct you will be directed to the profile.
+
 Uploading Pictures:
-ï	Click on the upload button.
-ï	Click on Browse to search your computer for the desired .jpeg file.
-ï	You can enter captions (optional).
-ï	If you want to discard click cancel
-ï	If everything looks good hit save!
+‚Ä¢	Click on the upload button.
+‚Ä¢	Click on Browse to search your computer for the desired .jpeg file.
+‚Ä¢	You can enter captions (optional).
+‚Ä¢	If you want to discard click cancel
+‚Ä¢	If everything looks good hit save!
+
+Adding Stories:
+‚Ä¢	Click on the text area to type whats on your mind or what you want to share with friends.
+‚Ä¢	Once you are done typing click on save.
+‚Ä¢	If you change your mind of not sharing hit cancel.
+
+Editing Profile:
+‚Ä¢	Click on the edit button if you want to change some of your information.
+‚Ä¢	This will redirect you to a new page.
+‚Ä¢	Type the desired changes on the text spaces provided.
+‚Ä¢	When you are done with editing click on save.
+‚Ä¢	This will redirect you to the profile with the updated changes.
+‚Ä¢	If you decide not to change click on cancel.
+‚Ä¢	This will again redirect you back to profile without updating changes.
 
 Chatting With Friends:
-ï	Click on the message button to chat with your friends.
-ï	Enter the conversation on the text area.
-ï	Hit ìSend messageî to send the message to your friend.
-ï	Hit ìAttach Fileî to send pictures privately to your friend.
-ï	If you wish to end the conversation Click ìEnd conversationî.
-ï	The end conversation would take you back to the profile.
+‚Ä¢	Click on the message button to chat with your friends.
+‚Ä¢	Enter the conversation on the text area.
+‚Ä¢	Hit ‚ÄúSend message‚Äù to send the message to your friend.
+‚Ä¢	Hit ‚ÄúAttach File‚Äù to send pictures privately to your friend.
+‚Ä¢	If you wish to end the conversation Click ‚ÄúEnd conversation‚Äù.
+‚Ä¢	The end conversation would take you back to the profile.
+
 Signing Off:
-ï	If you wish to sing out and secure your profile.
-ï	Click on the sign off button.
-ï	This will redirect you to the login page.
+‚Ä¢	If you wish to sing out and secure your profile.
+‚Ä¢	Click on the sign off button.
+‚Ä¢	This will redirect you to the login page.
 
