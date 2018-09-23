@@ -7,17 +7,21 @@ User Login:
 •	If the user password is wrong there will be a pop up window saying wrong password.
 •	If password is correct you will be directed to the profile.
 
+Chatting With Friends:
+•	Click on the message button to chat with your friends.
+•	Enter the conversation on the text area.
+•	Hit “Send message” to send the message to your friend.
+•	Hit “Attach File” to send pictures privately to your friend.
+•	If you wish to end the conversation Click “End conversation”.
+•	The end conversation would take you back to the profile.
+
 Uploading Pictures:
 •	Click on the upload button.
 •	Click on Browse to search your computer for the desired .jpeg file.
 •	You can enter captions (optional).
 •	If you want to discard click cancel
 •	If everything looks good hit save!
-
-Adding Stories:
-•	Click on the text area to type whats on your mind or what you want to share with friends.
-•	Once you are done typing click on save.
-•	If you change your mind of not sharing hit cancel.
+•	After this you will be redirected back to the profile.
 
 Editing Profile:
 •	Click on the edit button if you want to change some of your information.
@@ -28,13 +32,10 @@ Editing Profile:
 •	If you decide not to change click on cancel.
 •	This will again redirect you back to profile without updating changes.
 
-Chatting With Friends:
-•	Click on the message button to chat with your friends.
-•	Enter the conversation on the text area.
-•	Hit “Send message” to send the message to your friend.
-•	Hit “Attach File” to send pictures privately to your friend.
-•	If you wish to end the conversation Click “End conversation”.
-•	The end conversation would take you back to the profile.
+Adding Stories:
+•	Click on the text area to type whats on your mind or what you want to share with friends.
+•	Once you are done typing click on share.
+•	If you change your mind of not sharing hit cancel.
 
 Signing Off:
 •	If you wish to sing out and secure your profile.
