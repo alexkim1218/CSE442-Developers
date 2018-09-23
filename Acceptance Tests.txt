@@ -1,0 +1,24 @@
+Acceptance Tests
+User Login:
+•	Enter login id in the first text box.
+•	Enter password in the second text box.
+•	Click on login button.
+Uploading Pictures:
+•	Click on the upload button.
+•	Click on Browse to search your computer for the desired .jpeg file.
+•	You can enter captions (optional).
+•	If you want to discard click cancel
+•	If everything looks good hit save!
+
+Chatting With Friends:
+•	Click on the message button to chat with your friends.
+•	Enter the conversation on the text area.
+•	Hit “Send message” to send the message to your friend.
+•	Hit “Attach File” to send pictures privately to your friend.
+•	If you wish to end the conversation Click “End conversation”.
+•	The end conversation would take you back to the profile.
+Signing Off:
+•	If you wish to sing out and secure your profile.
+•	Click on the sign off button.
+•	This will redirect you to the login page.
+
