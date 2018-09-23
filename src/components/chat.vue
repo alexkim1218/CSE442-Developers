@@ -46,7 +46,7 @@
       <textarea placeholder="Type message" name="msg" required></textarea>
       <button type="submit" class="button">Send Message</button>
       <button type="button" class="button">Attach File</button>
-      <button type="button" class="end" onclick="endChat()">End Conversation</button>
+      <router-link to="/home" tag="button" class="button">End Conversation</router-link>
     </form>
   </div>
   </div>
