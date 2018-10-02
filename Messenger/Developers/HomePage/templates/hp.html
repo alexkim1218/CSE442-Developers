@@ -3,17 +3,118 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Developers - Chat Window</title>
-    <link href="/usr/ubuntu/Static/styles.css" rel="stylesheet"/>
     <script src="https://unpkg.com/vue"></script>
 
 <style>
+  /* Main body */
   body {
     margin: 0 auto;
     max-width: 800px;
     padding: 0 20px;
   }
-</style>
 
+  /* Sender's message box */
+  .user {
+      border: 2px solid #DEDEDE;
+      background-color: #F1F1F1;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 0;
+  }
+
+  /* Receiver's message box */
+  .receiver {
+      color: #FFFFFF;
+      border-color: #000CCC;
+      background-color: #1E90FF;
+  }
+
+  /* Clean the message box */
+  .user::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+
+  /* Sender's images on the left */
+  .user img {
+      float: left;
+      max-width: 60px;
+      width: 100%;
+      margin-right: 20px;
+      border-radius: 50%;
+  }
+
+  /* Receiver's images on the right */
+  .user img.receiver {
+      float: right;
+      margin-left: 20px;
+      margin-right:0;
+  }
+
+  /* Sender's name on the left */
+  .text-left {
+      float: left;
+      color: #999999;
+  }
+
+  /* Sender's message time on the right */
+  .text-right {
+      float: right;
+      color: #AAAAAA;
+  }
+
+  /* Receiver's name time on the left */
+  .text-left-receiver {
+      float: left;
+      color: #FFFFFF;
+  }
+
+  /* Receiver's name on the right */
+  .text-right-receiver {
+      float: right;
+      color: #FFFFFF;
+  }
+
+  /* Message input box */
+  .form-box textarea {
+      width: 96%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: 2px solid #DEDEDE;
+      border-radius: 5px;
+      background: #F1F1F1;
+      resize: none;
+      min-height: 50px;
+      font-size: 11pt;
+  }
+
+  /* Send & Attach File button layout */
+  .form-box .button {
+      background-color: #008000;
+      color: #FFFFFF;
+      padding: 16px 20px;
+      border: 2px solid #DEDEDE;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 32.9%;
+      margin-bottom:10px;
+      opacity: 0.8;
+  }
+
+  /* End Conversation button layout */
+  .form-box .end {
+      background-color: #FF0000;
+      color: #FFFFFF;
+      padding: 16px 20px;
+      border: 2px solid #DEDEDE;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 32.9%;
+      margin-bottom:10px;
+      opacity: 0.8;
+  }
+</style>
 </head>
 
 <body>
@@ -58,7 +159,7 @@
   </div>
 
   <div class="chat" id="form">
-    <form action="/action_page.php" class="form-box">
+    <form class="form-box">
       <h3>Message</h3>
       <textarea placeholder="Type message" name="msg" required></textarea>
       <button type="submit" class="button">Send Message</button>
@@ -67,5 +168,4 @@
     </form>
   </div>
 </body>
-
 </html>
