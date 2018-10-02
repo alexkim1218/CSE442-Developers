@@ -3,5 +3,9 @@ function startChat() {
 }
 
 function endChat() {
-      document.getElementById("form").style.display = "none";
+  document.getElementById("form").style.display = "none";
+}
+
+function closeWindow() {
+  // TODO: Link to the login window when clicked
 }
