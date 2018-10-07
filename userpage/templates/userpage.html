@@ -1,0 +1,18 @@
+
+<HTML>
+<HEAD>
+	<TITLE>User Page</TITLE>
+</HEAD>
+
+<BODY>
+	
+    <p>Hello! </p>
+    {% for c in userpage %}
+    <p>{{ c }}</p>
+    {% endfor %}
+	<form method="get">
+		<input type="submit"  value="BackToHome" name="bth">
+	</form>
+
+</BODY>
+</HTML>
