@@ -144,6 +144,16 @@
     opacity: 0.8;
     font-size: 10pt;
   }
+
+  /* Friend list layout */
+  .list {
+      color: #FFFFFF;
+      padding: 0 18px;
+      width: 10%;
+      display: none;
+      overflow: hidden;
+      background-color: #1E90FF;
+  }
 </style>
 </head>
 
@@ -152,8 +162,17 @@
   <script src="app.js"></script>
       <center><h1>Chat Window</h1></center>
 
-        <button class="close" onclick="closeWindow()" style="float:right;">Close</button>
-        <button class="add" style="float:right;">Add</button>
+      <button class="close" onclick="closeWindow()" style="float:right;">Close</button>
+
+              <button class="add" style="float:right;">Add</button>
+                <div class="list" style="float:right;">
+                  <p>Noomar</p>
+                  <p>Ding</p>
+                  <p>Jaswinder</p>
+                  <p>Weibin</p>
+                </div>
+
+                <br/><br/><br/><br/><br/>
 
   <div class="user">
     <img src="/usr/ubuntu/Static/avatar1.png" alt="Avatar" style="width:100%;">
@@ -223,5 +242,25 @@
       <button type="button" class="end" onclick="endChat()">End Conversation</button>
     </form>
   </div>
+
+  <script>
+  var add = document.getElementsByClassName("add");
+  var i;
+
+  for (i = 0; i < add.length; i++) {
+    add[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var list = this.nextElementSibling;
+
+        if (list.style.display === "block") {
+          list.style.display = "none";
+        }
+
+        else {
+          list.style.display = "block";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
