@@ -19,9 +19,11 @@ class UserPageView(TemplateView):
 
 
 def index(request):
-        if request.GET.get('bth'):
+        if request.GET.get('sigt'):
             return HttpResponseRedirect('/homepage/')
+        elif request.GET.get('edit'):
+            return HttpResponseRedirect('/userprofile/')
         else:
-            return render(request, 'userpage.html', {'userpage': [models.getNickName()]})
+            return render(request, 'userpage.html', {'nickname': 'Admin'})
 
 
