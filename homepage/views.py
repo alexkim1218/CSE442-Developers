@@ -2,12 +2,10 @@ from django.shortcuts import render, render_to_response
 # Create your views here.
 
 from django.views.generic.base import TemplateView
-from django.http import HttpResponse
-#from django.conf.urls import include
-from django.template import loader
 
 from django.http import HttpResponseRedirect
-from homepage.models import Check
+from library.checkinput import Check
+
 
 class HomePageView(TemplateView):
     template_name = "homepage.html"
@@ -15,11 +13,11 @@ class HomePageView(TemplateView):
 
 def index(request):
         if request.GET.get('log'):
-            if Check.checkUsername(request.GET['uname']) and Check.checkPassword(request.GET['password']):
-                print(Check.checkIn())
+            if Check.checkhomepage(Check, request.GET['uname'], request.GET['password']):
                 return HttpResponseRedirect('/userpage/')
             else:
-                return render(request, 'homepage.html', {'errormsg': ['You have invaild Username or Password!!!!']})
+                error = Check.geterror(Check)
+                return render(request, 'homepage.html', {'errormsg': [error]})
         elif request.GET.get('sig'):
             return HttpResponseRedirect('/signup/')
         else:
