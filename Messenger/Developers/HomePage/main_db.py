@@ -14,21 +14,32 @@ def checkUsrName(usr):
 
 def SubmitSignUp(usr, pwd, usrstory, firstn, lastn, eml, edu, dob):
     if checkUsrName(usr) == False:
-        signUpQuery = ProfileTb(username=usr, password=pwd, userstory=usrstory, firstname=firstn, lastname=lastn, email=eml, education=edu, dateofbirth=dob)
+        signUpQuery = ProfileTb(username=usr, password=pwd, userstory=usrstory,
+                                firstname=firstn, lastname=lastn, email=eml, education=edu,
+                                dateofbirth=dob)
         signUpQuery.save()
         return True
     return False
 
 def logIn(usr, pwd):
     if checkUsrName(usr):
-        pwdcolumn = list(ProfileTb.objects.values_list('username','password'))
-        pwdcolumn = [list(elem) for elem in pwdcolumn]
-        pwdlist = []
-        [pwdlist.append(elem[0]) for elem in pwdcolumn]
-        pwdindex = pwdlist.index(usr)
-        if pwd == pwdcolumn[pwdindex][1]:
-            return True
+        login_row = ProfileTb.objects.get(username=usr)
+        if login_row.password == pwd:
+            return {'firstname':login_row.firstname,
+                    'lastname':login_row.lastname,
+                    'userstory':login_row.userstory,
+                    'email':login_row.email,
+                    'education':login_row.education,
+                    'dateofbirth':login_row.dateofbirth}
     return False
+
+def homepgView(usr):
+    profile = ProfileTb.objects.get(username=usr)
+    usrProfileDic = {'userstory':profile.userstory, 'firstname':profile.firstname,
+                     'lastname':profile.lastname, 'email':profile.email,
+                     'education':profile.education, 'dateofbirth':profile.dateofbirth }
+    return usrProfileDic
+
 
 def editProfile(usr, firstn, lastn, eml, dob, edu):
     profile_edit = ProfileTb.objects.get(username=usr)
