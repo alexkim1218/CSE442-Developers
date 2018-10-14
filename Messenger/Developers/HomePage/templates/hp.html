@@ -89,7 +89,7 @@
     font-size: 10pt;
   }
 
-  /* Send & Attach File button layout */
+  /* Send button layout */
   .form-box .button {
     background-color: #008000;
     color: #FFFFFF;
@@ -97,7 +97,7 @@
     border: 2px solid #DEDEDE;
     border-radius: 5px;
     cursor: pointer;
-    width: 32.9%;
+    width: 49.7%;
     margin-bottom:10px;
     opacity: 0.8;
     font-size: 10pt;
@@ -111,7 +111,7 @@
     border: 2px solid #DEDEDE;
     border-radius: 5px;
     cursor: pointer;
-    width: 32.9%;
+    width: 49.7%;
     margin-bottom:10px;
     opacity: 0.8;
     font-size: 10pt;
@@ -149,10 +149,12 @@
   .list {
       color: #FFFFFF;
       padding: 0 18px;
+      border: 2px solid #DEDEDE;
+      border-radius: 5px;
       width: 10%;
       display: none;
       overflow: hidden;
-      background-color: #1E90FF;
+      background-color: #008000;
   }
 </style>
 </head>
@@ -235,10 +237,9 @@
   <div class="chat" id="form">
     <form class="form-box">
       <h2>Message</h2>
+      <input type="file">
       <textarea placeholder="Type message" name="msg" required></textarea>
       <button type="submit" class="button">Send Message</button>
-      <input type="file">
-      <!-- <button type="button" class="button">Attach File</button> -->
       <button type="button" class="end" onclick="endChat()">End Conversation</button>
     </form>
   </div>
