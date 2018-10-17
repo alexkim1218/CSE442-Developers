@@ -141,7 +141,7 @@ class ProfileTb(models.Model):
     friends = models.CharField(max_length=45, blank=True, null=True)
     dater = models.DateTimeField(auto_now_add=True)
     class Meta:
-        managed = False
+        managed = True
         db_table = 'profile_tb'
 
 class PhotoTb(models.Model):
