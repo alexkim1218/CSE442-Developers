@@ -56,3 +56,27 @@ def submitImage(usr, img, cap):
     uploadimage = PhotoTb(username=usr, image=img, date=d, caption=cap)
     uploadimage.save()
     return 'image uploaded!'
+
+
+## return false if friend's username does not exist
+## return false if friend's username already in friend list
+## return true if successfully add friend
+def addFriend(usr, friendusr):
+    if checkUsrName(friendusr):
+        profile = ProfileTb.objects.get(username=usr)
+        originalFriends = profile.friends
+        if originalFriends is '':
+            profile.friends = friendusr
+        else:
+            if friendusr in originalFriends.split('-'):
+                return False
+            else:
+                profile.friends = originalFriends+'-'+friendusr
+        profile.save()
+        return True
+    return False
+##return a list of friends' username
+def friendsList(usr):
+    profile = ProfileTb.objects.get(username=usr)
+    friendsString = profile.friends
+    return friendsString.split('-')
