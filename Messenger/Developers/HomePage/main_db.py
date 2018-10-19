@@ -65,7 +65,7 @@ def addFriend(usr, friendusr):
     if checkUsrName(friendusr):
         profile = ProfileTb.objects.get(username=usr)
         originalFriends = profile.friends
-        if originalFriends is '':
+        if originalFriends is None:
             profile.friends = friendusr
         else:
             if friendusr in originalFriends.split('-'):
