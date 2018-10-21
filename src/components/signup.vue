@@ -1,23 +1,32 @@
 <template>
   <div class="hello">
-
-  Welcome to Developers
-    <h1>Hi!</h1>
+Edit Profile
+  <h1>General Information</h1>
     <form>
         <p>
-          <label>User ID</label>
+        <label>First Name</label>
           <input type = "text"
                   v-model="username"
                  id = "username" />
         </p>
         <p>
-          <label>Password</label>
-          <input type = "password"
-                  v-model="password"
-                 id = "password" />
+          <label>Last Name</label>
+          <input type = "text" />
         </p>
-        <button @click=authenticate>Login</button>
-        <router-link to="/signup" tag="button" class="button">Signup</router-link>
+        <p>
+          <label>Email ID</label>
+            <input type = "text" />
+        </p>
+        <p>
+          <label>Date of Birth</label>
+          <input type = "text" />
+        </p>
+        <p>
+          <label>Password</label>
+            <input type = "text" />
+        </p>
+        <router-link to="/home" tag="button" class="button">Save</router-link>
+        <router-link to="/home" tag="button" class="button">Cancel</router-link>
     </form>
 
   </div>
@@ -45,9 +54,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,h2,p {
   font-weight: normal;
-}
+  }
 ul {
   list-style-type: none;
   padding: 0;
