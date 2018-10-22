@@ -24,5 +24,8 @@ urlpatterns = [
     path('userpage/', include('userpage.urls')),
     path('signup/', include('signup.urls')),
     path('userprofile/', include('userprofile.urls')),
+    path('friend_list/', include('friends.urls')),
+    path('message/', include('message.urls')),
+    path('upload/', include('upload.urls')),
 
 ]

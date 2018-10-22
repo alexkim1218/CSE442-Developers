@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'signup.apps.SignupConfig',
     'userpage.apps.UserpageConfig',
     'userprofile.apps.UserprofileConfig',
+    'friends.apps.FriendsConfig',
+    'message.apps.MessageConfig',
+    'upload.apps.UploadConfig'
 ]
 
 MIDDLEWARE = [
@@ -63,6 +66,9 @@ TEMPLATES = [
                     '/cse442/userpage/templates',
                     '/cse442/signup/templates',
                     '/cse442/userprofile/templates',
+                    '/cse442/friends/templates',
+                    '/cse442/message/templates',
+                    '/cse442/upload/templates',
                 ],
 
         'APP_DIRS': True,
@@ -85,8 +91,12 @@ WSGI_APPLICATION = 'cse442.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'developers_db',
+        'USER': 'developers',
+        'PASSWORD': 'cse442developers',
+        'HOST': 'cse442db.cqjugucbgl8v.us-east-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
