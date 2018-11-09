@@ -1,4 +1,4 @@
-from HomePage.models import ProfileTb, PhotoTb
+from HomePage.models import ProfileTb, PhotoTb, ChatTb
 from datetime import date as dt
 
 
@@ -21,6 +21,7 @@ def SubmitSignUp(usr, pwd, usrstory, firstn, lastn, eml, edu, dob):
         return True
     return False
 
+
 def logIn(usr, pwd):
     if checkUsrName(usr):
         login_row = ProfileTb.objects.get(username=usr)
@@ -33,11 +34,12 @@ def logIn(usr, pwd):
                     'dateofbirth':login_row.dateofbirth}
     return False
 
+
 def homepgView(usr):
     profile = ProfileTb.objects.get(username=usr)
     usrProfileDic = {'userstory':profile.userstory, 'firstname':profile.firstname,
                      'lastname':profile.lastname, 'email':profile.email,
-                     'education':profile.education, 'dateofbirth':profile.dateofbirth }
+                     'education':profile.education, 'dateofbirth':profile.dateofbirth}
     return usrProfileDic
 
 
@@ -50,6 +52,7 @@ def editProfile(usr, firstn, lastn, eml, dob, edu):
     profile_edit.education = edu
     profile_edit.save()
     return 'Profile edited!'
+
 
 def submitImage(usr, img, cap):
     d = str(dt.today())
@@ -75,8 +78,47 @@ def addFriend(usr, friendusr):
         profile.save()
         return True
     return False
+
+
 ##return a list of friends' username
 def friendsList(usr):
     profile = ProfileTb.objects.get(username=usr)
     friendsString = profile.friends
-    return friendsString.split('-')
+    if friendsString is None:
+        return False
+    else:
+        return friendsString.split('-')
+
+
+def previousChatExist(usr, friend):
+    chatusr = list(ChatTb.objects.values_list('usrnames'))
+    chatusr = [list(elem) for elem in chatusr]
+    usrlist = []
+    [usrlist.append(elem[0]) for elem in chatusr]
+    if usr in usrlist:
+        return True
+    return False
+
+
+def insertChat(usr, friend, chat_arg):
+    usrsStr = usr+'-'+friend
+    insertchatQuery = ChatTb(usrnames=usrsStr, chat=chat_arg)
+    insertchatQuery.save()
+    return
+
+def getChat(usr, friend):
+    usrsChat = usr + '-' + friend
+    friendChat = friend + '-' + usr
+    uchats = ChatTb.objects.filter(usrnames=usrsChat)
+    fchats = ChatTb.objects.filter(usrnames=friendChat)
+    usrchatlist = []
+    friendchatlist = []
+
+    for uchat in uchats:
+        usrchatlist.append((uchat.chat, str(uchat.datetime)))
+    for fchat in fchats:
+        friendchatlist.append((fchat.chat, str(fchat.datetime)))
+
+    return {'userchat':usrchatlist, 'friendchat':friendchatlist}
+
+

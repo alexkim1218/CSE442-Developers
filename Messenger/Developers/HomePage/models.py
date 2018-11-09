@@ -153,3 +153,11 @@ class PhotoTb(models.Model):
     class Meta:
         managed = False
         db_table = 'photo_tb'
+class ChatTb(models.Model):
+    usrnames = models.CharField(max_length=45, blank=True, null=True)
+    chat = models.CharField(max_length=45, blank=True, null=True)
+    datetime = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        managed = False
+        db_table = 'chat_tb'
