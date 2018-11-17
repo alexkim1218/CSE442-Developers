@@ -145,10 +145,9 @@ class ProfileTb(models.Model):
         db_table = 'profile_tb'
 
 class PhotoTb(models.Model):
-    username = models.CharField(unique=True, max_length=45)
+    username = models.CharField(max_length=45)
     image = models.TextField()
-    date = models.DateTimeField()
-    caption = models.CharField(max_length=500)
+    date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         managed = False

@@ -54,9 +54,8 @@ def editProfile(usr, firstn, lastn, eml, dob, edu):
     return 'Profile edited!'
 
 
-def submitImage(usr, img, cap):
-    d = str(dt.today())
-    uploadimage = PhotoTb(username=usr, image=img, date=d, caption=cap)
+def submitImage(usr, img):
+    uploadimage = PhotoTb(username=usr, image=img)
     uploadimage.save()
     return 'image uploaded!'
 
