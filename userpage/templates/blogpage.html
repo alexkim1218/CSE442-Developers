@@ -12,7 +12,7 @@
     body {
       font-family: Arial;
       padding: 20px;
-      background: #BBBBBB;
+      background: #DCDCDC;
     }
 
     /* Title */
@@ -58,21 +58,76 @@
           padding: 0;
         }
       }
+
+      /* Story input box */
+      .form-box textarea {
+        width: 96%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        background: #F1F1F1;
+        resize: none;
+        min-height: 50px;
+        font-size: 10pt;
+      }
+
+      /* Post button layout */
+      .form-box .button {
+        background-color: #008000;
+        color: #FFFFFF;
+        padding: 16px 20px;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 49.7%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        font-size: 10pt;
+      }
+
+      /* Close button layout */
+      .form-box .close {
+        background-color: #FF0000;
+        color: #FFFFFF;
+        padding: 16px 20px;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 49.7%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        font-size: 10pt;
+      }
+
+      /* Return button layout */
+      .return {
+        background-color: #FF0000;
+        color: #FFFFFF;
+        padding: 10px 10px;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+        margin-bottom:10px;
+        opacity: 0.8;
+        font-size: 10pt;
+      }
 </style>
 </head>
 
 <body>
   <div class="header">
-  Blog Page
+    <h2>Blog Page</h2>
   </div>
 
   <div class="row">
     <div class="leftcolumn">
       <div class="card">
         <center>
-        <img src="ADD IMAGE HERE" style="width:50%;">
+        <img src="/Users/Alex/github/CSE442-Projects/Avatars/avatar1.png" style="width:80%;">
         <h2>Alex Kim</h2>
-        <button>Return to Profile Page</button>
+        <button class="return">Return to Profile Page</button>
       </center>
       </div>
     </div>
@@ -80,11 +135,12 @@
     <div class="rightcolumn">
       <div class="card">
         <form class="form-box">
-
+          <center>
           <h2>Stories</h2>
-          <textarea></textarea>
-          <button>Post Story</button>
-          <button>Close</button>
+          <textarea placeholder="What's on your mind?" name="story" required></textarea>
+          <button type="submit" class="button">Post Story</button>
+          <button type="button" class="close" onclick="endChat()">Close</button>
+        </center>
         </form>
       </div>
     </div>
