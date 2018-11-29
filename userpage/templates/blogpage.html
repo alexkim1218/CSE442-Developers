@@ -10,9 +10,10 @@
     }
 
     body {
+      background-image: url("/Users/Alex/github/CSE442-Projects/Images/blogpage.jpeg");
+      background-size: cover;
       font-family: Arial;
-      padding: 20px;
-      background: #DCDCDC;
+      padding: 20px;\
     }
 
     /* Title */
@@ -125,7 +126,7 @@
     <div class="leftcolumn">
       <div class="card">
         <center>
-        <img src="/Users/Alex/github/CSE442-Projects/Avatars/avatar1.png" style="width:80%;">
+        <img src="/Users/Alex/github/CSE442-Projects/Avatars/male.png" style="width:80%;">
         <h2>Alex Kim</h2>
         <button class="return">Return to Profile Page</button>
       </center>
@@ -138,6 +139,11 @@
           <center>
           <h2>Stories</h2>
           <textarea placeholder="What's on your mind?" name="story" required></textarea>
+          </center>
+
+            <input type="file"><br>
+
+          <center>
           <button type="submit" class="button">Post Story</button>
           <button type="button" class="close" onclick="endChat()">Close</button>
         </center>
