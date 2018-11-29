@@ -140,6 +140,7 @@ class ProfileTb(models.Model):
     dateofbirth = models.CharField(max_length=45)
     friends = models.CharField(max_length=45, blank=True, null=True)
     dater = models.DateTimeField(auto_now_add=True)
+    gender = models.CharField(max_length=45)
     class Meta:
         managed = True
         db_table = 'profile_tb'

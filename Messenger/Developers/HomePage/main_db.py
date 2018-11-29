@@ -12,11 +12,11 @@ def checkUsrName(usr):
     return False
 
 
-def SubmitSignUp(usr, pwd, usrstory, firstn, lastn, eml, edu, dob):
+def SubmitSignUp(usr, pwd, usrstory, firstn, lastn, eml, edu, dob, gender):
     if checkUsrName(usr) == False:
         signUpQuery = ProfileTb(username=usr, password=pwd, userstory=usrstory,
                                 firstname=firstn, lastname=lastn, email=eml, education=edu,
-                                dateofbirth=dob)
+                                dateofbirth=dob, gender=gender)
         signUpQuery.save()
         return True
     return False
