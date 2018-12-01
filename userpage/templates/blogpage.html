@@ -87,8 +87,8 @@
         font-size: 10pt;
       }
 
-      /* Close button layout */
-      .form-box .close {
+      /* Return button layout */
+      .form-box .return {
         background-color: #FF0000;
         color: #FFFFFF;
         padding: 16px 20px;
@@ -101,12 +101,12 @@
         font-size: 10pt;
       }
 
-      /* Return button layout */
-      .return {
-        background-color: #FF0000;
+      /* Other button layout */
+      .other {
+        background-color: #3B5998;
         color: #FFFFFF;
         padding: 10px 10px;
-        border: 2px solid #DEDEDE;
+        border: 2px solid #8B9DC3;
         border-radius: 5px;
         cursor: pointer;
         width: 250px;
@@ -128,7 +128,8 @@
         <center>
         <img src="/Users/Alex/github/CSE442-Projects/Avatars/male.png" style="width:80%;">
         <h2>Alex Kim</h2>
-        <button class="return">Return to Profile Page</button>
+        <button class="other">About Me</button>
+        <button class="other">Friends</button>
       </center>
       </div>
     </div>
@@ -145,7 +146,7 @@
 
           <center>
           <button type="submit" class="button">Post Story</button>
-          <button type="button" class="close" onclick="endChat()">Close</button>
+          <button type="button" class="return">Return to Profile Page</button>
         </center>
         </form>
       </div>
