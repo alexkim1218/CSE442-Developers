@@ -1,96 +1,135 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-	<TITLE>User Page</TITLE>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza - User Page</title>
+    <script src="https://unpkg.com/vue"></script>
+
 <style>
-h1, h2 {
-  font-weight: normal;
-}
-.photo {
-  width: 200px;
-  height: 200px;
-  margin-top: 20px;
-  border-radius: 100px;
-  border: 4px solid #fff;
-}
-.left
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.font
-{
-margin-top: -15px;
-font-size: 10pt;
-color: #42b983;
-}
-.number
-{
-padding: 0px;
-font-size: 14pt;
-font-weight: bold;
-font-family: 'Montserrat', sans-serif;
-color: #aaa;
-}
-.form-box textarea {
-    width: 96%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: 2px solid #DEDEDE;
-    border-radius: 5px;
-    background: #F1F1F1;
-    resize: none;
-    min-height: 50px;
-    font-size: 11pt;
-}
-.button {
-    background-color: #008000;
-    color: #FFFFFF;
-    padding: 16px 20px;
-    border: 2px solid #DEDEDE;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 10%;
-    margin-bottom:10px;
-    opacity: 0.8;
-}
-</style>
-</HEAD>
-
-<BODY>
-	
-  <div>
-      {% load staticfiles %}
-<img class="photo" src="{% static 'avatar1.png' %}" alt = "img"/>
-      <h1>{{ nickname }}</h1>
-  <p class="font">Friends          Image</p>
-  <p class="number">42                0</p>
-      <form method="get">
-          <input type="submit" tag="button" class = "button" value="Message" name="msg">
-          <input type="submit" tag="button" class = "button" value="Upload" name="load">
-          <input type="submit" tag="button" class = "button" value="Edit" name="edit">
-          <input type="submit" tag="button" class = "button" value="Sign Out" name="sigt">
-      </form>
-<form class="form-box">
-   <h3>Story</h3>
-   <textarea placeholder="Whats on your mind" name="msg" required></textarea>
-   <button type="submit" class="button">Share</button>
-   <router-link to="/home" tag="button" class="button">Cancel</router-link>
-  </form>
-  </div>
-
-<script>
-export default {
-  name: 'homepage',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  * {
+      box-sizing: border-box;
     }
-  }
-}
-</script>
-</BODY>
-</HTML>
+
+    body {
+      background-image: url("/Users/Alex/github/CSE442-Projects/Images/userpage.jpeg");
+      background-size: cover;
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    /* Photo */
+    .photo {
+      margin-top: 20px;
+      border-radius: 100px;
+      border: 4px solid #fff;
+    }
+
+    /* Title */
+    .header {
+      padding: 30px;
+      font-size: 40px;
+      text-align: center;
+      background: white;
+    }
+
+    /* Add a card effect for columns */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Change the layout automatically when the screen is less than 800px wide */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+      /* Enter box */
+      .form-box textarea {
+        width: 60%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        background: #F1F1F1;
+        resize: none;
+        min-height: 50px;
+        font-size: 10pt;
+      }
+
+      /* Button A layout */
+      .form-box .buttona {
+        background-color: #008000;
+        color: #FFFFFF;
+        padding: 16px 20px;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        font-size: 10pt;
+      }
+
+      /* Button B layout */
+      .buttonb {
+        background-color: #3B5998;
+        color: #FFFFFF;
+        padding: 16px 20px;
+        border: 2px solid #8B9DC3;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        font-size: 10pt;
+      }
+
+      /* Signout button layout */
+      .signout {
+        background-color: #FF0000;
+        color: #FFFFFF;
+        padding: 16px 20px;
+        border: 2px solid #DEDEDE;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 60%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        font-size: 10pt;
+      }
+</style>
+</head>
+
+<body>
+  <div class="header">
+    <h2>Welcome, Alex!</h2>
+  </div>
+      <div class="card">
+        <form class="form-box">
+          <center>
+          <img class="photo" src="/Users/Alex/github/CSE442-Projects/Avatars/male.png" style="width:20%;">
+
+          <br><br><br>
+          <button type="buttona" class="buttona">Message</button>
+          <button type="buttona" class="buttona">Upload</button><br>
+
+          <button type="buttonb" class="buttonb">Edit Information</button>
+          <button type="buttonb" class="buttonb">Friends</button><br>
+
+          <button type="signout" class="signout">Sign Out</button>
+        </center>
+        </form>
+    </div>
+  </div>
+</body>
+</html>
