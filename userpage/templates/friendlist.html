@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pizza - Blog Page</title>
+    <title>Pizza - Friend List</title>
     <script src="https://unpkg.com/vue"></script>
 
 <style>
@@ -10,17 +10,10 @@
     }
 
     body {
-      background-image: url("/Users/Alex/github/CSE442-Projects/Images/blogpage.jpeg");
+      background-image: url("/Users/Alex/github/CSE442-Projects/Images/friendlist.jpeg");
       background-size: cover;
       font-family: Arial;
-      padding: 20px;\
-    }
-
-    /* Photo */
-    .photo {
-      margin-top: 20px;
-      border-radius: 100px;
-      border: 4px solid #fff;
+      padding: 20px;
     }
 
     /* Title */
@@ -29,20 +22,6 @@
       font-size: 40px;
       text-align: center;
       background: white;
-    }
-
-    /* Create two unequal columns that floats next to each other */
-    /* Left column */
-    .leftcolumn {
-      float: left;
-      width: 25%;
-    }
-
-    /* Right column */
-    .rightcolumn {
-      float: left;
-      width: 75%;
-      padding-left: 20px;
     }
 
     /* Add a card effect for columns */
@@ -67,9 +46,9 @@
         }
       }
 
-      /* Story input box */
+      /* Enter box */
       .form-box textarea {
-        width: 96%;
+        width: 60%;
         padding: 15px;
         margin: 5px 0 22px 0;
         border: 2px solid #DEDEDE;
@@ -80,43 +59,29 @@
         font-size: 10pt;
       }
 
-      /* Post button layout */
-      .form-box .post {
+      /* Add button layout */
+      .form-box .button {
         background-color: #008000;
         color: #FFFFFF;
         padding: 16px 20px;
         border: 2px solid #DEDEDE;
         border-radius: 5px;
         cursor: pointer;
-        width: 49.7%;
+        width: 30%;
         margin-bottom:10px;
         opacity: 0.8;
         font-size: 10pt;
       }
 
       /* Return button layout */
-      .return {
+      .form-box .return {
         background-color: #FF0000;
         color: #FFFFFF;
         padding: 16px 20px;
         border: 2px solid #DEDEDE;
         border-radius: 5px;
         cursor: pointer;
-        width: 49.7%;
-        margin-bottom:10px;
-        opacity: 0.8;
-        font-size: 10pt;
-      }
-
-      /* Other button layout */
-      .other {
-        background-color: #3B5998;
-        color: #FFFFFF;
-        padding: 10px 10px;
-        border: 2px solid #8B9DC3;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 250px;
+        width: 30%;
         margin-bottom:10px;
         opacity: 0.8;
         font-size: 10pt;
@@ -126,39 +91,21 @@
 
 <body>
   <div class="header">
-    <h2>Blog Page</h2>
+    <h2>Friend List</h2>
   </div>
-
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-        <center>
-        <img class="photo" src="/Users/Alex/github/CSE442-Projects/Avatars/male.png" style="width:80%;">
-        <h2>Alex Kim</h2>
-        <button class="other">About Me</button>
-        <button class="other">Friends</button>
-      </center>
-      </div>
-    </div>
-
-    <div class="rightcolumn">
       <div class="card">
         <form class="form-box">
           <center>
-          <h2>Stories</h2>
-          <textarea placeholder="What's on your mind?" name="story" required></textarea>
-          </center>
 
-            <input type="file"><br>
+          <h2>Alex</h2>
+          <h2>Noomar</h2>
 
-          <center>
-          <button type="post" class="post">Post Story</button>
+          <textarea placeholder="Enter your friend's user ID" name="friend" required></textarea><br>
+          <button type="button" class="button">Add Friend</button>
           <button type="return" class="return">Return to Profile Page</button>
         </center>
         </form>
-      </div>
     </div>
-
   </div>
 </body>
 </html>
