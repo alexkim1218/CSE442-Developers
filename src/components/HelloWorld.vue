@@ -17,6 +17,7 @@
                  id = "password" />
         </p>
         <button @click=authenticate>Login</button>
+        <router-link to="/signup" tag="button" class="button">Signup</router-link>
     </form>
 
   </div>
